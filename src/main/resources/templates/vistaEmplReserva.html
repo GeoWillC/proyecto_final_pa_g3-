@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html mlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>   
+	<meta charset="UTF-8">   
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">   
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Document</title>
+</head>
+
+<body>   
+
+	<table style="margin: 0 auto;">
+		<tr>
+			<th>Placa:</th>
+			<td th:text="${vehiculo.placa}"></td>
+		</tr>
+
+		<tr>
+			<th>Modelo:</th>
+			<td th:text="${vehiculo.modelo}"></td>
+		</tr>
+
+		<tr>
+			<th>Estado:</th>
+			<td th:text="${vehiculo.disponibilidad}"></td>
+		</tr>
+
+		<tr>
+			<th>Fecha:</th>
+			<td th:text="${reserva.fechaInicio}"></td>
+			<label>-</label>
+			<td th:text="${reserva.fechafinal}"></td>
+		</tr>
+		<tr>
+			<th>Reservado por</th>
+			<td th:text="${cliente.cedula}"></td>
+		</tr>
+	</table>
+	<form th:action="@{/empleado/funciones}">
+		<input type="submit" value="Retirar">
+	</form>
+</body>
+
+</html>

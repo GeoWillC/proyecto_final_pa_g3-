@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html mlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>   
+	<meta charset="UTF-8">   
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">   
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Document</title>
+</head>
+
+<body>   
+	<table style="margin: 0 auto;">
+		<h1 cstyle="text-align:center;">VEHICULO SI ESTA DISPONIBLE</h1>
+		<thead>
+			<tr>
+				<th>Valor a Pagar</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td th:text="${valor}"></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<form th:action="@{/clientes/datosVerificar}" th:object="${reserva}" th:method="GET">
+		<table style="margin: 0 auto;">
+			<tr>
+				<td>
+					<label>Tarjeta:</label>
+
+				</td>
+				<td>
+					<input type="text" id="tarjeta" th:field="${reserva.tarjeta}">
+				</td>
+			</tr>
+		</table>
+
+		<div style="text-align:center;">
+			<input type="submit" value="Buscar">
+		</div>
+	</form>
+
+</body>
+
+</html>

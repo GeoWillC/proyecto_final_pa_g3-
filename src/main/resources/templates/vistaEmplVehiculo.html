@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>   
+	<meta charset="UTF-8">   
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">   
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Actualizacion</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body> 
+	<form th:action="@{/empleado/actualizar/{id}(id=${vehiculo.id})}" th:object="${vehiculo}" th:method="PUT">
+		<table>
+			<tr>
+				<td>
+					<label>Placa:</label>
+
+				</td>
+				<td>
+					<input type="text" id="placa" th:field="${vehiculo.placa}">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Modelo:</label>
+
+				</td>
+				<td>
+					<input type="text" id="modelo" th:field="${vehiculo.modelo}">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Marca:</label>
+
+				</td>
+				<td>
+					<input type="text" id="marca" th:field="${vehiculo.marca}">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label> Año de fabricacion :</label>
+				</td>
+				<td>
+					<input class="label label-primary" type="number" id="anioFabricion"
+						th:field="${vehiculo.anioFabricion}">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label> Pais de fabricacion:</label>
+				</td>
+				<td>
+					<input class="label label-primary" type="text" id="paisFabricion"
+						th:field="${vehiculo.paisFabricion}">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label> Cilindraje:</label>
+				</td>
+				<td>
+					<input class="label label-primary" type="text" id="cilindraje" th:field="${vehiculo.cilindraje}">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label> Precio:</label>
+				</td>
+				<td>
+					<input class="label label-primary" type="text" id="precio" th:field="${vehiculo.precio}">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label> Valor por dia:</label>
+				</td>
+				<td>
+					<input class="label label-primary" type="text" id="valorDia" th:field="${vehiculo.valorDia}">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label> Disponibilidad:</label>
+				</td>
+				<td>
+					<input class="label label-primary" type="text" id="disponibilidad" th:field="${vehiculo.disponibilidad}">
+				</td>
+			</tr>
+			
+		</table>
+		<input type="submit" value="Actualizar">
+	</form>
+</body>
+
+</html>

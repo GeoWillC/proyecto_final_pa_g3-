@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html mlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>   
+	<meta charset="UTF-8">   
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">   
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Document</title>
+</head>
+
+<body>   
+	<form th:action="@{/clientes/buscarReserva}" th:object="${vehiculo}" "${cliente}" "${reserva}" th:method="GET">
+		<table style="margin: 0 auto;">
+			<tr>
+				<td>
+					<label>Placa:</label>
+
+				</td>
+				<td>
+					<input type="text" id="placa" th:field="${vehiculo.placa}">
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<label>Cedula:</label>
+
+				</td>
+				<td>
+					<input type="text" id="cedula" th:field="${cliente.cedula}">
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<label>Fecha Inicio:</label>
+
+				</td>
+				<td>
+					<input type="datetime-local" id="fechaInicio" th:field="${reserva.fechaInicio}">
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<label>Fecha Fin:</label>
+
+				</td>
+				<td>
+					<input type="datetime-local" id="fechafinal" th:field="${reserva.fechafinal}">
+				</td>
+			</tr>
+
+		</table>
+
+		<div style="text-align:center;">
+			<input type="submit" value="Crear">
+		</div>
+		
+	</form>
+	<div style="text-align:center;">
+					<form th:action="@{/empleado/sinReserva}">  
+						<button class="btn btn-primary" type="submit">Regresar</button>
+					</form>
+			</div>
+</body>
+
+</html>

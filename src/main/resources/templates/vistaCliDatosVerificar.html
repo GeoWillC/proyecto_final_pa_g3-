@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html mlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>   
+	<meta charset="UTF-8">   
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">   
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Document</title>
+</head>
+
+<body>   
+	<table style="margin: 0 auto;">
+		<thead>
+			<tr>
+				<th>PLACA</th>
+				<th>CEDULA</th>
+				<th>FechaInicio</th>
+				<th>FechaFin</th>
+				<th>TARJETA</th>
+				<th>VALOR TOTAL</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<td th:text="${vehiculo.placa}"></td>
+			<td th:text="${cliente.cedula}"></td>
+			<td th:text="${reserva.fechaInicio}"></td>
+			<td th:text="${reserva.fechafinal}"></td>
+			<td th:text="${reserva.tarjeta}"></td>
+			<td th:text="${reserva.valorTotalPagar}"></td>
+
+			<form th:action="@{/clientes/RegistrarReserva}" th:method="POST">
+
+				<div style="text-align:center;">
+					<input type="submit" value="RESERVAR">
+				</div>
+			</form>
+		</tbody>
+	</table>
+
+</body>
+
+</html>
